@@ -80,7 +80,7 @@ export GYP_DEFINES
 
 # goma support.
 if [[ -d "${HOME}/Applications/goma" ]]; then
-	GYP_DEFINES="${GYP_DEFINES} use_goma=1 gomadir=\"${HOME}/Applications/goma\""
+	GYP_DEFINES="${GYP_DEFINES} use_goma=1 gomadir=\"${HOME}/bin/goma\""
 	export GYP_DEFINES
 fi
 
@@ -100,8 +100,8 @@ if [[ -d /opt/local ]]; then
 fi
 
 # depot_tools must be first in $PATH
-if [[ -d "${HOME}/Applications/depot_tools" ]]; then
-	PATH="${HOME}/Applications/depot_tools:${PATH}"
+if [[ -d "${HOME}/bin/depot_tools" ]]; then
+	PATH="${HOME}/bin/depot_tools:${PATH}"
 fi
 
 # Enable various useful bash aliases
@@ -121,8 +121,8 @@ if [[ -x "/usr/local/sbin/chrome-devel-sandbox" ]]; then
 fi
 
 # Setup Android NDK
-if [[ -d "${HOME}/Applications/android-ndk-current" ]]; then
-	ANDROID_NDK_ROOT="${HOME}/Applications/android-ndk-current"
+if [[ -d "${HOME}/../src/chromium/src/third_party/android_tools/ndk" ]]; then
+	ANDROID_NDK_ROOT="${HOME}/../src/chromium/src/third_party/android_tools/ndk"
 	export ANDROID_NDK_ROOT
 fi
 
@@ -143,3 +143,4 @@ unset ncpu
 
 # Set PATH so it includes user's private bin
 PATH="${HOME}/bin:${PATH}"
+

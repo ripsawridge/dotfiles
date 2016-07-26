@@ -26,7 +26,7 @@ elif [[ -r /etc/bash.bashrc ]]; then
 fi
 
 # Shortcut to the dotfiles repository
-DOTFILES="${HOME}/.dotfiles"
+DOTFILES="${HOME}/src/dotfiles"
 
 # Set a fancy prompt and xterm title
 source "${DOTFILES}/sh/git-prompt.sh"

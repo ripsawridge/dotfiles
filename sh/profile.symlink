@@ -22,3 +22,9 @@ if [ -n "${BASH_VERSION}" ]; then
 		. "${HOME}/.bashrc"
 	fi
 fi
+
+# LaTeX on the mac is in a weird place.
+if [[ -d "/Library/TeX/Distributions/Programs/texbin" ]]; then
+        PATH="/Library/TeX/Distributions/Programs/texbin:${PATH}"
+fi
+

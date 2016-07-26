@@ -53,14 +53,6 @@ nmap <silent> <Leader>g :noautocmd execute "lvimgrep /" . expand("<cword>") . "/
 
 "--}}}
 
-"--{{{ UltiSnips
-
-let g:UltiSnipsExpandTrigger = "<c-j>"
-let g:UltiSnipsJumpForwardTrigger = "<c-j>"
-let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
-
-"--}}}
-
 "--{{{ YouCompleteMe
 
 let g:ycm_always_populate_location_list = 1
@@ -197,9 +189,9 @@ set ruler
 "set rulerformat=%55(%{strftime('%a\ %b\ %e\ %I:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%)
 
 " colors
+let g:solarized_termcolors = 256  " newline
 colorscheme solarized
 set background=dark
-
 " folding
 set fen
 set fdm=marker

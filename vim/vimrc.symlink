@@ -58,7 +58,7 @@ nmap <silent> <Leader>g :noautocmd execute "lvimgrep /" . expand("<cword>") . "/
 let g:ycm_always_populate_location_list = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_min_num_identifier_candidate_chars = 4
-let g:ycm_extra_conf_globlist = ['~/Projects/v8/.ycm_extra_conf.py']
+let g:ycm_extra_conf_globlist = ['~/src/v8/.ycm_extra_conf.py']
 let g:ycm_filetype_specific_completion_to_disable = {'javascript': 1}
 
 nnoremap <leader>y :YcmForceCompileAndDiagnostics<CR>

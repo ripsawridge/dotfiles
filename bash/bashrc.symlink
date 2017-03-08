@@ -79,9 +79,9 @@ GYP_DEFINES="v8_use_external_startup_data=0"
 export GYP_DEFINES
 
 # goma support.
-if [[ -d "${HOME}/Applications/goma" ]]; then
-	GYP_DEFINES="${GYP_DEFINES} use_goma=1 gomadir=\"${HOME}/bin/goma\""
-	export GYP_DEFINES
+if [[ -d "${HOME}/goma" ]]; then
+	GOMA_DIR="${HOME}/bin/goma"
+	export GOMA_DIR
 fi
 
 # node related paths.
@@ -124,6 +124,11 @@ fi
 if [[ -d "${HOME}/../src/chromium/src/third_party/android_tools/ndk" ]]; then
 	ANDROID_NDK_ROOT="${HOME}/../src/chromium/src/third_party/android_tools/ndk"
 	export ANDROID_NDK_ROOT
+fi
+
+# install modern Ruby
+if [[ -d /opt/rubies/ruby-2.3.1/bin ]]; then
+    PATH="/opt/rubies/ruby-2.3.1/bin:${PATH}"
 fi
 
 # Set MAKEFLAGS based on processor count

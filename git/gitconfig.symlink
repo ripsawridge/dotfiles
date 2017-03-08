@@ -88,6 +88,6 @@
 	autosetuprebase = always
 
 [http]
-	cookiefile = /Users/bmeurer/.gitcookies
+	cookiefile = /usr/local/google/home/mvstanton/.gitcookies
 
 # vim:set ft=gitconfig noet sw=8 ts=8:

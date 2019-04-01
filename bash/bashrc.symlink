@@ -26,7 +26,7 @@ elif [[ -r /etc/bash.bashrc ]]; then
 fi
 
 # Shortcut to the dotfiles repository
-DOTFILES="${HOME}/src/dotfiles"
+DOTFILES="${HOME}/.dotfiles"
 
 # Set a fancy prompt and xterm title
 source "${DOTFILES}/sh/git-prompt.sh"
@@ -80,7 +80,7 @@ export GYP_DEFINES
 
 # goma support.
 if [[ -d "${HOME}/goma" ]]; then
-	GOMA_DIR="${HOME}/bin/goma"
+	GOMA_DIR="${HOME}/goma"
 	export GOMA_DIR
 fi
 

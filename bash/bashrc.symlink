@@ -101,6 +101,16 @@ if [[ -d /opt/local ]]; then
 	export MANPATH PKG_CONFIG_PATH
 fi
 
+# Homebrew related paths
+if [[ -d /usr/local/opt ]]; then
+  export NVM_DIR="$HOME/.nvm"
+  # PATH="/usr/local/opt/ruby/bin:${PATH}"
+  # export GEM_HOME="${HOME}/gems"
+  # PATH="${HOME}/gems/bin:${PATH}"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+fi
+
 # depot_tools must be first in $PATH
 if [[ -d "${HOME}/bin/depot_tools" ]]; then
 	PATH="${HOME}/bin/depot_tools:${PATH}"
@@ -128,11 +138,6 @@ if [[ -d "${HOME}/../src/chromium/src/third_party/android_tools/ndk" ]]; then
 	export ANDROID_NDK_ROOT
 fi
 
-# install modern Ruby
-if [[ -d /opt/rubies/ruby-2.3.1/bin ]]; then
-    PATH="/opt/rubies/ruby-2.3.1/bin:${PATH}"
-fi
-
 # Set MAKEFLAGS based on processor count
 if [[ -f /proc/cpuinfo ]]; then
 	ncpu="$(grep -c ^processor /proc/cpuinfo)"
@@ -153,3 +158,7 @@ PATH="${HOME}/bin:${PATH}"
 
 
 export PATH="$HOME/.yarn/bin:$PATH"
+
+export PATH="$PATH:/Applications/Muse"
+
+export DYLD_FALLBACK_LIBRARY_PATH="$DYLD_FALLBACK_LIBRARY_PATH:/Applications/Muse"

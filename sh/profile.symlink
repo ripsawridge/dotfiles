@@ -15,6 +15,13 @@
 # limitations under the License.
 #
 
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/mvstanton/google-cloud-sdk/path.bash.inc' ]; then . '/Users/mvstanton/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/mvstanton/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/mvstanton/google-cloud-sdk/completion.bash.inc'; fi
+
+
 # If running bash
 if [ -n "${BASH_VERSION}" ]; then
 	# Include ~/.bashrc if it exists
@@ -27,4 +34,11 @@ fi
 if [[ -d "/Library/TeX/Distributions/Programs/texbin" ]]; then
         PATH="/Library/TeX/Distributions/Programs/texbin:${PATH}"
 fi
+
+
+export PATH="$PATH:/Applications/Muse"
+
+export DYLD_FALLBACK_LIBRARY_PATH="$DYLD_FALLBACK_LIBRARY_PATH:/Applications/Muse"
+
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
